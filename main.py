@@ -1,4 +1,3 @@
-from abc import abstractmethod
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import requests
@@ -12,16 +11,11 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 
-class Team(db.Model):
+class Player(db.Model):
     id_no = db.Column(db.Integer, primary_key=True, autoincrement=True)
     squad_name = db.Column(db.String(200), nullable=False)
-    coach_name = db.Column(db.String(200), nullable=False)
-    
-    
-class Player():
-    id_no = db.Column(db.Integer, nullable=False)
     player = db.Column(db.String(200), nullable=False)
-
+    
 
 @app.route('/temp_create')
 def temp_create():
