@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Players</title>
+</head>
+<style>
+th, td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid black;
+}
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Player_Name</th>
+        </tr>
+        {% for player in players %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{player.player_name}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
